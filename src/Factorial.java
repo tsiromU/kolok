@@ -1,13 +1,19 @@
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Factorial {
     public int calculateFactorial(int n) throws Exception {
         
-        if( n < 0){
-
+        try{
+            if( n < 0){
+                IOException a = new IOException("n can't be negative");
+                throw(a);
+            }
+        } catch(IOException e){
+            System.out.println(e.getMessage());
         }
+
         ArrayList<BigDecimal> FactorialList = new ArrayList();
 
         BigDecimal currentFactorial = BigDecimal.ONE;
